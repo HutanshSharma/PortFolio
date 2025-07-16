@@ -1,9 +1,9 @@
 import { useRef,useState,useEffect } from "react"
 
 import Navbar from "./components/header/Navbar"
-import MainPage from "./components/header/mainpage"
+import MainPage from "./components/header/Mainpage"
 import Canvas from "./components/header/Canvas"
-import About from "./components/about/about"
+import About from "./components/about/About"
 import Education from "./components/education/Display"
 import Skills from "./components/skills/Skills"
 import Projects from "./components/projects/Project"
