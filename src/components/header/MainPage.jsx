@@ -15,9 +15,9 @@ export default function MainPage({projects,contact,ref,active}){
         <div className={`${mainclass} flex flex-col justify-center`} ref={ref} id="home">
             <div className="flex flex-col mx-20 md:mx-40 gap-10">
                 <div className={slideclass}>
-                    <h1 className="text-5xl md:text-6xl bg-gradient-to-b from-[#39d353] to-[#58a6ff] font-semibold bg-clip-text text-transparent">Hello, I'm</h1>
-                    <h1 className="text-5xl md:text-6xl font-semibold text-slate-300">Hutansh Sharma</h1>
-                    <h2 className="text-2xl md:text-3xl text-stone-100">Software Developer</h2>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl bg-gradient-to-b from-[#39d353] to-[#58a6ff] font-semibold bg-clip-text text-transparent">Hello, I'm</h1>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-300">Hutansh Sharma</h1>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl text-stone-100">Software Developer</h2>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-8 z-1">
                     <button onClick={()=>handleclick(projects)} className="border-1 border-[#58a6ff] py-2 px-4 rounded-lg text-[#58a6ff] hover:bg-[#58a6ff] hover:text-white ease-in-out duration-300">View my Work</button>
