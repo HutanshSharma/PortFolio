@@ -1,7 +1,7 @@
 import { useRef,useState,useEffect } from "react"
 
 import Navbar from "./components/header/Navbar"
-import MainPage from "./components/header/Mainpage"
+import MainPage from "./components/header/MainPage"
 import Canvas from "./components/header/Canvas"
 import About from "./components/about/About"
 import Education from "./components/education/Display"
