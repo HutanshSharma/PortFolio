@@ -1,4 +1,4 @@
-import Message from "./message"
+import Message from "./Message"
 
 export default function Footer({ref,active}){
     let classes="flex flex-col gap-10 fade-in"
