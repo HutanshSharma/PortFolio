@@ -1,14 +1,10 @@
-export default function Message({active}){
-    let classes="bg-[rgba(33,38,45,0.8)] px-4 sm:px-10 py-4 sm:py-5 rounded-xl w-full fade-in"
+export default function Message({active,ref}){
+    let classes="bg-[rgba(33,38,45,0.8)] px-4 sm:px-10 py-4 sm:py-5 rounded-xl w-full"
 
-    if(active==="contact"){
-        classes+=" active"     
-    }
-
-    const textclass="w-full border-1 border-slate-400 px-5 py-2 outline-none focus:border-b-2 focus:border-white rounded-lg"
-    const areaclass="w-full min-h-48 border-1 border-slate-400 px-5 py-2 outline-none focus:border-white rounded-lg"
+    const textclass="bg-[rgb(39,40,50)] w-full border-b-1 border-slate-400 px-5 py-2 outline-none focus:border-b-3 focus:border-white rounded-lg"
+    const areaclass="bg-[rgb(39,40,50)] w-full min-h-48 border-b-1 border-slate-400 px-5 py-2 outline-none focus:border-b-3 focus:border-white rounded-lg"
     return (
-        <div className={classes}>
+        <div className={classes} ref={ref}>
             <form action="https://formsubmit.co/hutanshsharma241005@gmail.com" method="POST" id="contactForm" className="flex flex-col gap-6">
                 <input type="text" id="name" name="name" placeholder="Your Name" className={textclass} required />
                 <input type="email" id="email" name="email" placeholder="Your Email" className={textclass} required />

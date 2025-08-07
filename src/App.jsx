@@ -9,6 +9,7 @@ import Skills from "./components/skills/Skills"
 import Projects from "./components/projects/Project"
 import Footer from "./components/contact_me/Footer"
 import MobileNavbar from "./components/header/MobileNavbar"
+import Scroll from "./components/scroll/Scroll"
 
 function App() {
   const about = useRef()
@@ -71,16 +72,17 @@ function App() {
       {width>780 && <Navbar home={home} about={about} education={education} skills={skills} projects={projects} contact={contact} active={activeSection}/>}
       {width<=780 && <MobileNavbar home={home} about={about} education={education} skills={skills} projects={projects} contact={contact} active={activeSection}/>}
       <Canvas/>
-      <MainPage ref={home} projects={projects} contact={contact} active={activeSection} />
+      <MainPage ref={home} projects={projects} contact={contact}/>
     </header>
     <main className="min-h-screen w-full bg-gradient-to-tl from-[#0d1117] via-[#21262d] to-[#30363d] nunito">
-      <About ref={about} active={activeSection}/>
-      <Education ref={education} active={activeSection}/>
-      <Skills ref={skills} active={activeSection}/>
+      <About ref={about} width={width}/>
+      <Education ref={education} width={width}/>
+      <Skills ref={skills} active={activeSection} width={width}/>
       <Projects ref={projects} />
     </main>
     <footer className="bg-gradient-to-tl from-[#0d1117] via-[#21262d] to-[#30363d] nunito">
-      <Footer ref={contact} active={activeSection}/>
+      <Scroll />
+      <Footer ref={contact}/>
     </footer>
     </>
   )

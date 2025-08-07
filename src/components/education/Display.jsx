@@ -1,16 +1,13 @@
 import data from "./data.js"
 import Box from "./Box"
 import { Fragment } from "react"
-import { useState } from "react"
+import String from "../string/String.jsx"
 
-export default function Display({ref,active}){
-    let classes="flex flex-col md:grid md:grid-cols-2 gap-16 md:gap-32 ml-10 sm:ml-20 mr-4 md:mx-4 lg:mx-10 fade-in"
-
-    if(active==="education"){
-        classes+=" active"     
-    }
+export default function Display({ref,width}){
+    let classes="flex flex-col md:grid md:grid-cols-2 gap-16 md:gap-32 ml-10 sm:ml-20 mr-4 md:mx-4 lg:mx-10"
 
     return (
+        <div className="flex flex-col items-center">
         <section className="py-16 flex items-center justify-center relative " ref={ref} id="education">
             <div className="absolute h-5/6 w-0.5 left-5 sm:left-10 md:left-1/2 bg-gradient-to-b from-[#39d353] to-[#58a6ff]  top-40"></div>
             <div className="flex flex-col justify-center items-center w-full md:max-w-4/5 2xl:max-w-2/3">
@@ -33,5 +30,7 @@ export default function Display({ref,active}){
                 </div>
             </div>
         </section>
+        {width>=1200 && <String /> }
+        </div>
     )
 }

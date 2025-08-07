@@ -13,17 +13,6 @@ button{
   cursor: pointer;
 }
 
-.slide-in {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.slide-in.appear {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 .fade-in {
   opacity: 0.1;
   transition: opacity 0.8s ease;
@@ -33,10 +22,33 @@ button{
   opacity: 1;
 }
 
-
 .nunito {
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
+}
+
+.st0 {
+  fill: #18181A;
+}
+
+#move{
+    display: flex;
+    padding: 3vw 0;
+    overflow: hidden;
+}
+
+.marque h1{
+    color: black;
+    font-weight: bold;
+}
+
+.marque {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    padding: 0 1.5vw;
+    transform: translateX(100%);
 }

@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function MobileNavbar({active,home,about,education,skills,projects,contact}){
     const [hamclick,sethamclick] = useState(false)
@@ -18,18 +20,31 @@ export default function MobileNavbar({active,home,about,education,skills,project
     else{
         current_class+=" -right-48"
     }
-    
-    window.addEventListener("click",(e)=>{
-        if(e.target.id!="sidebar"){
-            sethamclick(false)
-        }
-    })
 
+    useEffect(()=>{
+        function handler(e){
+            if(e.target.id!="sidebar"){
+            sethamclick(false)
+            }
+        }
+        window.addEventListener("click",handler)
+        return (window.removeEventListener("click",handler))
+    },[])
+
+    useGSAP(()=>{
+        gsap.from(".ham-title",{
+            opacity:0,
+            y:-20,
+            duration:1,
+            stagger:0.1,
+        })
+    })
+    
     return(
         <>
         <div className="bg-[rgba(13,17,23,0.85)] h-18 w-full fixed top-0 flex justify-between px-10 items-center text-lg border-b-1 border-[rgba(255,255,255,0.1)] z-3">
-            <p className="text-[#A0A0A0] text-2xl font-bold" onClick={() => handleclick(home)} style={{cursor:"pointer"}}>Portfolio</p>
-            <button onClick={handlehamclick}><i className="fa-solid fa-bars text-[#A0A0A0] text-3xl" id="sidebar"></i></button>
+            <p className="text-[#A0A0A0] text-2xl font-bold ham-title" onClick={() => handleclick(home)} style={{cursor:"pointer"}}>Portfolio</p>
+            <button onClick={handlehamclick}><i className="fa-solid fa-bars text-[#A0A0A0] text-3xl ham-title" id="sidebar"></i></button>
         </div>
         <div className={current_class} id="sidebar">
             <div className="flex flex-col gap-10" id="sidebar">
