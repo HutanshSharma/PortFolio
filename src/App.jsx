@@ -81,7 +81,7 @@ function App() {
       <Projects ref={projects} />
     </main>
     <footer className="bg-gradient-to-tl from-[#0d1117] via-[#21262d] to-[#30363d] nunito">
-      <Scroll />
+      {width>780 && <Scroll />}
       <Footer ref={contact}/>
     </footer>
     </>
