@@ -68,7 +68,7 @@ function App() {
 
   return(
     <>
-    <header className="overflow-hidden nunito">
+    <header className="overflow-hidden nunito overflow-x-hidden">
       {width>780 && <Navbar home={home} about={about} education={education} skills={skills} projects={projects} contact={contact} active={activeSection}/>}
       {width<=780 && <MobileNavbar home={home} about={about} education={education} skills={skills} projects={projects} contact={contact} active={activeSection}/>}
       <Canvas/>
@@ -81,7 +81,7 @@ function App() {
       <Projects ref={projects} />
     </main>
     <footer className="bg-gradient-to-tl from-[#0d1117] via-[#21262d] to-[#30363d] nunito">
-      {width>780 && <Scroll />}
+      <Scroll />
       <Footer ref={contact}/>
     </footer>
     </>

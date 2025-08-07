@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html,body {
+  overflow-x: hidden;
+}
+
 .skill-progress {
   height:100%;
   transition: width 1s ease-in-out;
@@ -11,15 +15,6 @@
 
 button{
   cursor: pointer;
-}
-
-.fade-in {
-  opacity: 0.1;
-  transition: opacity 0.8s ease;
-}
-
-.fade-in.active {
-  opacity: 1;
 }
 
 .nunito {
@@ -36,7 +31,7 @@ button{
 #move{
     display: flex;
     padding: 3vw 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .marque h1{

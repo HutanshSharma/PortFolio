@@ -26,7 +26,7 @@ export default function MobileNavbar({active,home,about,education,skills,project
             }
         }
         window.addEventListener("click",handler)
-        return (window.removeEventListener("click",handler))
+        return ()=>{window.removeEventListener("click",handler)}
     },[])
     
     return(
